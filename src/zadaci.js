@@ -1,4 +1,5 @@
 // Funkcija za kreiranje tabele pomocu innerhtml-a
+
 function kreiranjeTabele1(brojRedova, brojKolona){
   let html = "<table>"
 
@@ -16,26 +17,33 @@ function kreiranjeTabele1(brojRedova, brojKolona){
 }
 
 
+
 // Funkcija za Kreiranje tabele pomocu AppendChild
+
 function kreiranjeTabele2(brojRedova, brojKolona){
-  let redovi = document.createElement("tr");
-  let kolone = document.createElement("td");
+  let newTR;
+  let newTD;
   let tabela = document.createElement("table");
 
   for (let i=0; i<brojRedova; i++){
+    newTD = document.createElement("td");
+
     for (let j=0; j<brojKolona; j++){
-      redovi.textContent(Math.ceil(Math.random()*20) + "");
-      kolone.appendChild(redovi);
+      newTR = document.createElement("tr");
+      newTR.innerHTML = Math.ceil(Math.random()*10);
+      newTD.appendChild(newTR);
     }
-    redovi.appendChild(kolone);
+
+    tabela.appendChild(newTD);
   }
 
-  tabela.appendChild(redovi);
   document.getElementById("id_tabela2").appendChild(tabela);
 }
 
 
+
 // Unos broja redova i kolona i EventListener
+
 let red = document.getElementById("id_red").value;
 let kolona = document.getElementById("id_kolona").value;
 let pozivTabele = document.getElementById("id_unos_tabele");
