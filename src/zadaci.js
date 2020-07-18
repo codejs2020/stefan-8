@@ -41,13 +41,14 @@ function kreiranjeTabele2(brojRedova, brojKolona){
 }
 
 function ispis(){
+  // Unos broja redova i kolona i ispis tabela
   let red = document.getElementById("id_red").value;
   let kolona = document.getElementById("id_kolona").value;
   kreiranjeTabele1(red, kolona);
   kreiranjeTabele2(red, kolona);
 }
 
-// Unos broja redova i kolona i EventListener
+// Pozivanje pomocu EventListener-a
 
 let pozivTabele = document.getElementById("id_unos_tabele");
 pozivTabele.addEventListener("click", ispis);
