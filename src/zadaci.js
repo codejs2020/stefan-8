@@ -31,7 +31,7 @@ function kreiranjeTabele2 (brojRedova, brojKolona) {
     tabela.appendChild(tr)
   }
 
-  document.getElementById('tabela2').appendChild(tabela)
+  return document.getElementById('tabela2').appendChild(tabela)
 }
 
 // Unos broja redova i kolona i ispis tabela
@@ -43,4 +43,4 @@ function ispis () {
 }
 
 // Pozivanje pomocu EventListener-a
-document.getElementById('unos_tabele').addEventListener('click', ispis)
+document.getElementById('unos_tabele').addEventListener('click', ispis, { once: true })
